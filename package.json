@@ -1,0 +1,28 @@
+{
+  "name": "bookshelf",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/main.js",
+  "homepage": "./",
+  "scripts": {
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "react-start": "cross-env BROWSER=none NODE_ENV=development react-scripts start",
+    "electron-start": "ELECTRON_START_URL=http://localhost:3000/ electron .",
+    "start": "concurrently 'yarn react-start' 'wait-on http://localhost:3000/ && yarn electron-start'"
+  },
+  "dependencies": {
+    "electron": "^1.7.9",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.14"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "cross-env": "^5.1.0",
+    "devtron": "^1.4.0",
+    "wait-on": "^2.0.2"
+  }
+}
